@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'BestShrift';
     src: url("./fonts/Inter-VariableFont_slnt\,wght.ttf");
@@ -24,7 +28,7 @@
       width: 100%;
       height: 120px;
       position: fixed;
-      z-index: 1;
+      z-index: 1; 
   
   }
   .headlobby .container {
@@ -40,18 +44,17 @@
   }
   
   .headlobby-brand{
-      font-weight: 700;
-      font-size: 26px;
-      text-decoration: none;
-      color:#000;
-      transition: all .07s ease-in-out;
-      width: 150px;
-      padding: 30px;
-      color: #fff;
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+    color:#000;
+    transition: all .07s ease-in-out;
+    width: 150px;
+    color: #fff;
   }
   
   .headlobby-brand:hover{
-      color:rgb(0, 0, 0)
+    color: rgb(145, 3, 109);
   }
   
   .headlobby-wrap{
@@ -79,36 +82,52 @@
     background-color: #ffffff;
     color: rgb(145, 3, 109);
   }
-  
-  .headlobby-wrap-secondary{
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      width: 150px;
-      align-items: center;
-      padding-right: 280px;
-      gap: 20px;
-  }
-  
-  .headlobby-wrap-secondary a{
-    display: inline-block;
-    color: #000;
-    opacity: 0.9;
-    text-decoration: none;
-    transition: all .07s ease-in-out;
-    text-align: center;
-    font-family: 'BestShrift';
-    font-size: 20px;
+
+  .header__charging {
     color: #fff;
-    border-radius: 30px;
-    border: 5px solid #ffffff00;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+    
   }
-  
-  .headlobby-wrap-secondary a:hover {
-    background-color: #ffffff;
+
+  .header__charging:hover {
     color: rgb(145, 3, 109);
   }
   
+  .header__feedback{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: right;
+  }
+
+  .header__phone {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #fff;
+    transition: .35s;
+    white-space: nowrap;
+  }
+
+  .header__call{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #fff;
+    text-decoration: underline;
+    transition: .35s;
+  }
+
+   .header__call:hover {
+    color: rgb(145, 3, 109);
+  } 
+
   .main__video {
     z-index: -1;
     height: 100vh;
