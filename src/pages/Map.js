@@ -5,7 +5,7 @@ function Map(){
   return(
     <div>
       <Header/>
-      <div className="container mx-auto flex justify-center my-16">
+      <div className="container mx-auto flex justify-center my-16 pt-[120px]">
         <Maplockation/>
       </div>
     </div>

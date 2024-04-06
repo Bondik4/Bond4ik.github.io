@@ -93,7 +93,7 @@ function Home() {
           </Link>
           <nav className="headlobby-wrap">
             <a href="#">Авто в наличии</a>
-            <a href="#">Модельный ряд</a>
+            <Link to="/Auto">Модельный ряд</Link>
             <a href="#">Сервис</a>
             <a href="#">Услуги</a>
             <a href="#">О нас</a>
