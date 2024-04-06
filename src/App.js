@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import Map from './pages/Map';
+import CarModel from './pages/CarModel';
 
 import {
   createBrowserRouter,
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/Map",
     element: <Map />,
+  },
+  {
+    path: "/CarModel",
+    element: <CarModel />,
   },
   
 ]);
