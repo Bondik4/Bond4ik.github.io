@@ -1,4 +1,4 @@
-import { YMaps, Map, Placemark, ListBoxItem, ListBox } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Placemark, ListBoxItem, ListBox,} from '@pbe/react-yandex-maps';
 
 function Maplockation() {
   return (
@@ -11,4 +11,5 @@ function Maplockation() {
     </YMaps>
   );
 }
+
 export default  Maplockation;

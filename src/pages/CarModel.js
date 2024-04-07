@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import CarMenu from "../components/CarMenu";
 import CarTier from "../components/CarTier";
+import Footer from "../components/Footer";
 
 function Auto(){
   return (
@@ -13,6 +14,9 @@ function Auto(){
       <div className="">
         <CarTier />
       </div>
+    </div>
+    <div>
+      <Footer />
     </div>
   </div>
   )
