@@ -7,11 +7,11 @@ function Auto(){
   return (
     <div className="bg-[#F7F8F9] box-border">
     <Header /> 
-    <div className="container mx-auto pt-[120px]">
+    <div className="container mx-auto pt-[120px] flex">
       <div>
         <CarMenu />
       </div>
-      <div className="">
+      <div className="pl-[100px]">
         <CarTier />
       </div>
     </div>
