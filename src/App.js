@@ -2,6 +2,7 @@ import './App.css';
 import Home from './pages/Home';
 import Map from './pages/Map';
 import CarModel from './pages/CarModel';
+import AboutUs from './pages/AboutUs';
 
 import {
   createBrowserRouter,
@@ -21,7 +22,10 @@ const router = createBrowserRouter([
     path: "/CarModel",
     element: <CarModel />,
   },
-  
+  {
+    path: "/AboutUs",
+    element: <AboutUs />,
+  },
 ]);
 
 function App() {

@@ -41,10 +41,6 @@ const cars = [
     image: "/media/car/Li/1.webp"
   },
   {
-    text: "Li Auto L9",
-    image: "/media/car/Li/1.webp"
-  },
-  {
     text: "Li Auto L7",
     image: "/media/car/Li/2.webp"
   },
@@ -53,19 +49,19 @@ const cars = [
     image: "/media/car/Li/3.webp"
   },
   {
-    text: "BYD Han",
+    text: "BYD Yangwang U8",
     image: "/media/car/BYD/1.webp"
   },
   {
-    text: "BYD Yangwang",
+    text: "BYD Tang",
     image: "/media/car/BYD/2.webp"
   },
   {
-    text: "RX",
+    text: "EVR",
     image: "/media/car/Voyah/1.webp"
   },
   {
-    text: "TXL",
+    text: "PASSION EV",
     image:"/media/car/Voyah/2.webp"
   },
 ]
@@ -76,11 +72,10 @@ function CarTier(){
       <div className = "flex flex-col gap-10">
           <BlockOFCars name = "Модельный ряд NIO" image = "/media/images/NIO5.webp" start = {0} end = {5}/>
           <BlockOFCars name = "Модельный ряд Zeeker" image = "/media/images/Zeekr3.webp" start = {5} end = {9}/>
-          <BlockOFCars name = "Модельный ряд Li" image = "/media/images/Lixiang2.webp" start = {9} end = {13}/>
-          <BlockOFCars name = "Модельный ряд BYD" image = "/media/images/BYD1.webp" start = {13} end = {15}/>
-          <BlockOFCars name = "Модельный ряд Voyah" image = "/media/images/Voyah4.webp" start = {15} end = {17}/>
+          <BlockOFCars name = "Модельный ряд Li" image = "/media/images/Lixiang2.webp" start = {9} end = {12}/>
+          <BlockOFCars name = "Модельный ряд BYD" image = "/media/images/BYD1.webp" start = {12} end = {14}/>
+          <BlockOFCars name = "Модельный ряд Voyah" image = "/media/images/Voyah4.webp" start = {14} end = {16}/>
       </div>
-
     )
   }
 
@@ -88,10 +83,10 @@ function CarTier(){
     let arr = cars;
     arr = arr.slice(start, end)
     return(
-      <div className="bg-white rounded-lg shadow-2xl">
-        <div className="bg-[white] flex items-center gap-5">
-          <img className=" w-[95px] rounded-lg shadow-2xl " src={image}/>
-          <a className="font-bold text-[17px]">{name}</a>
+      <div className="bg-white rounded-lg shadow-2xl p-4">
+        <div className="bg-[white] flex items-center gap-5 ">
+          <img className=" w-[95px] rounded-lg shadow-2xl" src={image}/>
+          <a className="font-bold text-[17px] ">{name}</a>
         </div>
         <div className = "grid grid-cols-4 grid-rows-2">
           { arr.slice({start, end}).map((elem, i) => { return <SingleCar text = {elem.text} carImage={elem.image} key = {i}/> }) }
