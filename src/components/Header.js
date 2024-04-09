@@ -11,7 +11,7 @@ function Header(){
             <a href="#">Авто в наличии</a>
             <Link to="/CarModel">Модельный ряд</Link>
             <a href="#">Сервис</a>
-            <a href="#">Услуги</a>
+            <Link to="/Services">Услуги</Link>
             <Link to="/AboutUs">О нас</Link>
           </nav>
           <div className='flex justify-center items-center gap-2'>

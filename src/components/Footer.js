@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Footer() {
   return (
     <footer
       className="bg-[#000000] text-center text-neutral-600 dark:bg-[#000000] dark:text-neutral-200 lg:text-left">
+      <ScrollToTop />
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
           <span>Общайтесь с нами в социальных сетях:</span>
         </div>
-        {/* <!-- Social network icons container --> */}
+        {/* <!-- Контейнер для иконок социальных сетей --> */}
         <div className="flex justify-center">
           <a className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
@@ -97,7 +99,7 @@ export default function Footer() {
             "Электромобили - движение в будущее без вреда для природы!"
             </p>
           </div>
-          {/* <!-- Products section --> */}
+          {/* <!-- Раздел продуктов --> */}
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -120,7 +122,7 @@ export default function Footer() {
               >Масла и жидкости для авто</a>
             </p>
           </div>
-          {/* <!-- Useful links section --> */}
+          {/* <!-- Раздел "Полезные ссылки" --> */}
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -143,7 +145,7 @@ export default function Footer() {
               >Помощь</a>
             </p>
           </div>
-          {/* <!-- Contact section --> */}
+          {/* <!-- Раздел "Контакты" --> */}
           <div>
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -205,7 +207,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* <!--Copyright section--> */}
+      {/* <!--Раздел авторских прав--> */}
       <div className="bg-[#000000] p-6 text-center dark:bg-[#000000]">
         <span>© 2023 Copyright:</span>
         <a
@@ -215,4 +217,11 @@ export default function Footer() {
       </div>
     </footer>
   );
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect (() => {
+    window.scrollTo (0, 0);
+  }, [pathname]);
 }

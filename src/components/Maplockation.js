@@ -4,8 +4,8 @@ function Maplockation() {
   return (
     <YMaps width="100%">
       <div className='w-full'>
-        <Map height="700px" width="100%" 
-        defaultState={{ center: [59.945376, 30.375293], zoom: 12 }}>
+        <Map height="600px" width="100%" 
+          defaultState={{ center: [59.945376, 30.375293], zoom: 12 }}>
           <GeolocationControl options={{ float: "left" }} />
           <TrafficControl options={{ float: "right" }} />
           <TypeSelector options={{ float: "right" }} />
