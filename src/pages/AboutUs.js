@@ -37,7 +37,8 @@ function AboutUs(){
           <img className="rounded-lg" src="./media/AboutUs/1.webp"></img>
           <div className="flex flex-col pt-[70px] pb-[80px] pl-[80px]">
           <h className="text-[50px] font-Bold"> Миссия компании</h>
-          <a className="text-[18px] pt-[20px] text-justify">За десятилетия своей истории компания CarSales 
+          <a className="text-[18px] pt-[20px] text-justify">
+            За десятилетия своей истории компания CarSales 
             зарекомендовала себя как надежный партнер и крупнейший 
             независимый дистрибьютор автомобилей в России. Наша основная миссия: 
             окружить клиентов комфортом на всех этапах сделки, предоставить большой 
@@ -48,9 +49,9 @@ function AboutUs(){
         </div>
         <div className="flex">
           <div className="flex flex-col pt-[100px] pb-[80px] pr-[80px]">
-            <h className="text-[50px] font-Bold">Преимущества ElectroSales</h>
+            <h className="text-[48px] font-Bold">Преимущества ElectroSales</h>
             <div>
-              <ul className="text-[18px] list-disc pl-[20px] pt-[20px]">
+              <ul className="text-[21px] list-disc pl-[20px] pt-[20px]">
                 <li>широкий ассортимент электрических автомобилей от популярных производителей;</li>
                 <li>команда квалифицированных менеджеров;</li>
                 <li>полное сопровождение сделки;</li>
@@ -93,9 +94,9 @@ function AboutUs(){
         </div>
         <div className="flex justify-between pt-[50px]">
           <div className="flex flex-col" >
-            <h className="text-[30px] font-Bold">Какие услуги мы оказываем:</h>
+            <h className="text-[33px] font-Bold">Какие услуги мы оказываем:</h>
               <div>
-                <ul className="text-[18px] list-disc pl-[20px] pt-[20px]">
+                <ul className="text-[22px] list-disc pl-[20px] pt-[20px]">
                   <li>продажа новых автомобилей;</li>
                   <li>выкуп авто с пробегом;</li>
                   <li>кредитование;</li>
@@ -108,7 +109,7 @@ function AboutUs(){
           </div>
             <img className="rounded-lg " src="./media/AboutUs/3.webp"></img>
         </div>
-        <div className="text-[17px] pt-[50px] pb-[25px]">
+        <div className="text-[18px] pt-[50px] pb-[25px]">
         <a>Откройте мир мощных, экологичных и роскошных автомобилей вместе с автосалоном 
             ElectroSales. Узнайте больше информации о моделях в наличии по телефону, 
               указанному на сайте.</a>
