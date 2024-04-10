@@ -10,15 +10,15 @@ function Auto(){
     <Header />  
       <div className="container mx-auto pt-[120px] flex">
         <div className = "flex flex-col">
-          <div className='flex pt-8'>
+          <div className='flex pt-6'>
             <Link className="text-slate-400 text-[14px] " to="/">Главная </Link>
             <a className="text-[14px]">— Модельный ряд</a>
           </div> 
-          <div className = "pr-[160px]">
+          <div className = "pt-[10px] pr-[160px]">
             <CarMenu />
           </div>
         </div>
-      <div className="">
+      <div className="pl-[120px]">
         <CarTier />
       </div>
     </div>
