@@ -30,7 +30,7 @@ function Home() {
           </div>
           <div className="header__feedback">
             <a className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
-            <a className='header__call' href="#">Обратный звонок</a>
+            <Modal text = "Обратный звонок"/>
           </div>
         </div>
       </header>
@@ -61,6 +61,33 @@ function Home() {
   );
 }
 
+function Modal({ text, btnClass }) {
+  const [isOpened, setIsOpened] = useState(false);  
+  function openModal() {
+    document.body.style.overflow = "hidden";
+    setIsOpened(true);
+  }
 
+  function closeModal(e) {
+    if (e.target.classList.contains('modal')) {
+      setIsOpened(false);
+      document.body.style.overflow = "scroll";
+    }
+  }
+
+
+
+  return (
+    <>
+      <button data-open-modal="modal" className={"rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
+      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
+        <div className="modal-window">
+          {text}
+        </div>
+        <div className="overlay" />
+      </div>
+    </>
+  );
+}
 
 export default Home;
