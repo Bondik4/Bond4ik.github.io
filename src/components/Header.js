@@ -47,7 +47,7 @@ function Modal() {
 
   return (
     <>
-      <a data-open-modal="modal" className="text-white" onClick={openModal}>Обратный звонок</a>
+      <a data-open-modal="modal" className="underline-offset-4 text-white hover:text-[#91036d] duration-[90ms]" onClick={openModal}>Обратный звонок</a>
       <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
         <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>
@@ -57,12 +57,13 @@ function Modal() {
               </a>
           </div>
           <div className='pt-[40px]'>
-            <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black' placeholder='' />
+            <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black' placeholder='+7(___)___-__-__' />
           </div>
           <div className='pt-[20px]'>
             <button className='font-Bold p-5 pr-[100px] pl-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Заказать звонок</button>
           </div>
-          <div className='pt-[30px] text-justify w-[300px]'>
+          <div className='pt-[30px] text-justify w-[300px] flex gap-[10px]'>
+          <Checkbox/>
             <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
                принимаю условия Соглашения исогласен с обработкой моих персональных данных AutoSales способами и целей указанными 
                в Политике</a>
@@ -72,6 +73,18 @@ function Modal() {
       </div>
     </>
   );
+}
+
+function Checkbox() {
+  const [checked, setChecked] = useState(true);
+
+  function chengeCheckbox() {
+     setChecked(!checked);
+  }
+
+  return <div>
+     <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
+  </div>;
 }
 
 export default Header;

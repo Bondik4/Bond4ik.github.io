@@ -7,8 +7,6 @@ import Footer from "../components/Footer";
 
 
 function Home() {
-
-
   return (
     <>
       <header className="headlobby">
@@ -30,7 +28,7 @@ function Home() {
           </div>
           <div className="header__feedback">
             <a className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
-            <Modal text = "Обратный звонок"/>
+            <Modal/>
           </div>
         </div>
       </header>
@@ -47,9 +45,7 @@ function Home() {
               <a className="hero-block__btn" href="#">
                 Выбрать автомобиль
               </a>
-              <a className="hero-block__btn" href="#">
-                Оставить заявку
-              </a>
+              <a className="hero-block__btn" href="#">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -61,7 +57,7 @@ function Home() {
   );
 }
 
-function Modal({ text, btnClass }) {
+function Modal() {
   const [isOpened, setIsOpened] = useState(false);  
   function openModal() {
     document.body.style.overflow = "hidden";
@@ -79,15 +75,86 @@ function Modal({ text, btnClass }) {
 
   return (
     <>
-      <button data-open-modal="modal" className={"rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
+      <a data-open-modal="modal" className=" text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] " onClick={openModal}>Обратный звонок</a>
       <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
-        <div className="modal-window">
-          {text}
+        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
+          <div className='flex flex-col place-items-center'>
+            <h className="text-[28px] font-bold">Заказать звонок</h>
+            <a className='pt-[20px] text-center text-slate-400 w-[300px]'>
+              Оставить нам свой номер и наш менеджер свяжеться с вами в течении 15 минут.
+              </a>
+          </div>
+          <div className='pt-[40px]'>
+            <label>
+              <PhoneInput/>
+              <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'  placeholder="+7 (___) ___ - __ - __" required/>
+            </label>
+          </div>
+          <div className='pt-[20px]'>
+            <button className='font-Bold p-5 pr-[100px] pl-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Заказать звонок</button>
+          </div>
+          <div className='pt-[30px] text-justify w-[300px] flex gap-[10px] '>
+            <Checkbox/>
+            <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
+               принимаю условия Соглашения исогласен с обработкой моих персональных данных AutoSales способами и целей указанными 
+               в Политике</a>
+          </div>
         </div>
         <div className="overlay" />
       </div>
     </>
   );
 }
+
+function Checkbox() {
+  const [checked, setChecked] = useState(true);
+
+  function chengeCheckbox() {
+     setChecked(!checked);
+  }
+
+  return <div>
+     <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
+  </div>;
+}
+
+const PhoneInput = () => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handleChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ''); 
+
+    if (value.length > 11) {
+      value = value.substring(0, 11);
+    }
+
+    let formattedValue = '+7';
+    if (value.length >= 1) {
+      formattedValue += '(' + value.substring(1);
+      if (value.length >= 5) {
+        formattedValue = formattedValue.substring(0, 5) + ')' + value.substring(5);
+        if (value.length >= 9) {
+          formattedValue = formattedValue.substring(0, 9) + '-' + value.substring(9);
+          if (value.length >= 11) {
+            formattedValue = formattedValue.substring(0, 12) + '-' + value.substring(11);
+          }
+        }
+      }
+    }
+    setPhoneNumber(formattedValue);
+  };
+
+  return (
+    <input 
+      type="tel" 
+      value={phoneNumber} 
+      onChange={handleChange} 
+      placeholder="+7(XXX)-XXX-XX-XX" 
+      maxLength={17} 
+    />
+  );
+};
+
+
 
 export default Home;
