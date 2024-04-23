@@ -47,7 +47,7 @@ function Modal() {
 
   return (
     <>
-      <a data-open-modal="modal" className="underline-offset-4 text-white hover:text-[#91036d] duration-[90ms]" onClick={openModal}>Обратный звонок</a>
+      <a data-open-modal="modal" className=" text-white hover:text-[#91036d] duration-[90ms]" onClick={openModal}>Обратный звонок</a>
       <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
         <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>

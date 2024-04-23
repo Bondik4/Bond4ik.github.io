@@ -86,7 +86,7 @@ function Modal() {
           </div>
           <div className='pt-[40px]'>
             <label>
-              <PhoneInput/>
+              
               <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'  placeholder="+7 (___) ___ - __ - __" required/>
             </label>
           </div>
@@ -117,43 +117,6 @@ function Checkbox() {
      <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
   </div>;
 }
-
-const PhoneInput = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-
-  const handleChange = (e) => {
-    let value = e.target.value.replace(/\D/g, ''); 
-
-    if (value.length > 11) {
-      value = value.substring(0, 11);
-    }
-
-    let formattedValue = '+7';
-    if (value.length >= 1) {
-      formattedValue += '(' + value.substring(1);
-      if (value.length >= 5) {
-        formattedValue = formattedValue.substring(0, 5) + ')' + value.substring(5);
-        if (value.length >= 9) {
-          formattedValue = formattedValue.substring(0, 9) + '-' + value.substring(9);
-          if (value.length >= 11) {
-            formattedValue = formattedValue.substring(0, 12) + '-' + value.substring(11);
-          }
-        }
-      }
-    }
-    setPhoneNumber(formattedValue);
-  };
-
-  return (
-    <input 
-      type="tel" 
-      value={phoneNumber} 
-      onChange={handleChange} 
-      placeholder="+7(XXX)-XXX-XX-XX" 
-      maxLength={17} 
-    />
-  );
-};
 
 
 
