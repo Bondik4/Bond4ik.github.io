@@ -2,6 +2,23 @@ import { Link } from 'react-router-dom';
 import { useState } from "react";
 
 function Header(){
+  const [isOpened, setIsOpened] = useState(false);  
+    function openModal() {
+      document.body.style.overflow = "hidden";
+      setIsOpened(true);
+      }
+      
+      function closeModal(e) {
+      if (e.target.classList.contains('modal')) {
+      setIsOpened(false);
+      document.body.style.overflow = "scroll";
+      }
+      }
+      
+      const changeModalState = (e) => {
+      if (isOpened) {closeModal(e);} 
+      else {openModal();}
+      }
   return(
     <header className="headlobby bg-black">
         <div className="container mx-auto" >
@@ -22,33 +39,21 @@ function Header(){
           </div>
           <div className="header__feedback">
             <a className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
-            <Modal/>
+            <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
           </div>
         </div>
       </header>
   )
 }
 
-function Modal() {
-  const [isOpened, setIsOpened] = useState(false);  
-  function openModal() {
-    document.body.style.overflow = "hidden";
-    setIsOpened(true);
-  }
+{/* Скрипты */}
+{/* Модальное окно */}
 
-  function closeModal(e) {
-    if (e.target.classList.contains('modal')) {
-      setIsOpened(false);
-      document.body.style.overflow = "scroll";
-    }
-  }
-
-
-
+function Modal({isOpened, changeModalState}) {
   return (
     <>
-      <a data-open-modal="modal" className=" text-white hover:text-[#91036d] duration-[90ms]" onClick={openModal}>Обратный звонок</a>
-      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
+      <a data-open-modal="modal" className=" text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
+      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
         <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>
             <h className="text-[28px] font-bold">Заказать звонок</h>
@@ -57,13 +62,17 @@ function Modal() {
               </a>
           </div>
           <div className='pt-[40px]'>
-            <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black' placeholder='+7(___)___-__-__' />
+            <label>
+              <div>
+                <PhoneInput/>
+              </div>
+            </label>
           </div>
           <div className='pt-[20px]'>
             <button className='font-Bold p-5 pr-[100px] pl-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Заказать звонок</button>
           </div>
-          <div className='pt-[30px] text-justify w-[300px] flex gap-[10px]'>
-          <Checkbox/>
+          <div className='pt-[30px] text-justify w-[300px] flex gap-[10px] '>
+            <Checkbox/>
             <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
                принимаю условия Соглашения исогласен с обработкой моих персональных данных AutoSales способами и целей указанными 
                в Политике</a>
@@ -74,6 +83,7 @@ function Modal() {
     </>
   );
 }
+{/* Кнопка галочки в модальном окне */}
 
 function Checkbox() {
   const [checked, setChecked] = useState(true);
@@ -86,5 +96,45 @@ function Checkbox() {
      <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
   </div>;
 }
+
+{/* Инпут окно в модальном окне */}
+
+const PhoneInput = () => {
+  const [phoneNumber, setPhoneNumber] = useState('+7');
+
+  const handleChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ''); 
+  
+    if (value.length >= 1) {
+      value = '+7(' + value.substring(1);
+      if (value.length >= 6) {
+        value = value.substring(0, 6) + ')' + value.substring(6);
+        if (value.length >= 10) {
+          value = value.substring(0, 10) + '-' + value.substring(10);
+          if (value.length >= 13) {
+            value = value.substring(0, 13) + '-' + value.substring(13);
+          }
+        }
+      }
+    }
+
+    // проверяем, был ли символ удален
+    if (e.target.value.length < phoneNumber.length) {
+      setPhoneNumber(e.target.value); // обновляем состояние только если символ был удален
+    } else {
+      setPhoneNumber(value);
+    }
+  };
+
+  return (
+    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'
+      type="tel" 
+      value={phoneNumber} 
+      onChange={handleChange} 
+      placeholder="+7 (___) ___ - __ - __"
+      maxLength={16} 
+    />
+  );
+};
 
 export default Header;

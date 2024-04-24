@@ -5,8 +5,24 @@ import Footer from "../components/Footer";
 
 
 
-
 function Home() {
+    const [isOpened, setIsOpened] = useState(false);  
+    function openModal() {
+      document.body.style.overflow = "hidden";
+      setIsOpened(true);
+      }
+      
+      function closeModal(e) {
+      if (e.target.classList.contains('modal')) {
+      setIsOpened(false);
+      document.body.style.overflow = "scroll";
+      }
+      }
+      
+      const changeModalState = (e) => {
+      if (isOpened) {closeModal(e);} 
+      else {openModal();}
+      }
   return (
     <>
       <header className="headlobby">
@@ -27,8 +43,10 @@ function Home() {
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.65073 11.7909C8.35078 12.0765 8.3392 12.5513 8.62486 12.8512C8.91053 13.1512 9.38526 13.1628 9.68521 12.8771L8.65073 11.7909ZM13.1852 9.54375C13.4852 9.25809 13.4967 8.78336 13.2111 8.48341C12.9254 8.18346 12.4507 8.17188 12.1507 8.45755L13.1852 9.54375ZM12.1507 9.54408C12.4507 9.82974 12.9254 9.81817 13.2111 9.51822C13.4967 9.21827 13.4852 8.74354 13.1852 8.45787L12.1507 9.54408ZM9.68521 5.12454C9.38526 4.83888 8.91053 4.85045 8.62486 5.1504C8.3392 5.45035 8.35078 5.92508 8.65073 6.21075L9.68521 5.12454ZM12.668 9.75065C13.0822 9.75065 13.418 9.41486 13.418 9.00065C13.418 8.58644 13.0822 8.25065 12.668 8.25065V9.75065ZM3.33463 8.25065C2.92042 8.25065 2.58463 8.58644 2.58463 9.00065C2.58463 9.41486 2.92042 9.75065 3.33463 9.75065V8.25065ZM9.68521 12.8771L13.1852 9.54375L12.1507 8.45755L8.65073 11.7909L9.68521 12.8771ZM13.1852 8.45787L9.68521 5.12454L8.65073 6.21075L12.1507 9.54408L13.1852 8.45787ZM12.668 8.25065H3.33463V9.75065L12.668 9.75065V8.25065Z" fill="white"></path></svg>
           </div>
           <div className="header__feedback">
-            <a className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
-            <Modal/>
+            <a id="modal" className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
+            <div>
+              <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
+            </div>
           </div>
         </div>
       </header>
@@ -42,10 +60,8 @@ function Home() {
               <div className="sub-title">Продажа и обслуживание</div>
             </div>
             <div className="hero-block__conteiner container">
-              <a className="hero-block__btn" href="#">
-                Выбрать автомобиль
-              </a>
-              <a className="hero-block__btn" href="#">Оставить заявку</a>
+              <Link className="hero-block__btn" to="/CarModel">Выбрать автомобиль</Link>
+              <button onClick={openModal} className="hero-block__btn">Оставить заявку</button>
             </div>
           </div>
         </div>
@@ -57,26 +73,18 @@ function Home() {
   );
 }
 
-function Modal() {
-  const [isOpened, setIsOpened] = useState(false);  
-  function openModal() {
-    document.body.style.overflow = "hidden";
-    setIsOpened(true);
-  }
-
-  function closeModal(e) {
-    if (e.target.classList.contains('modal')) {
-      setIsOpened(false);
-      document.body.style.overflow = "scroll";
-    }
-  }
 
 
 
+
+{/* Скрипты */}
+{/* Модальное окно */}
+
+function Modal({isOpened, changeModalState}) {
   return (
     <>
-      <a data-open-modal="modal" className=" text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] " onClick={openModal}>Обратный звонок</a>
-      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
+      <a data-open-modal="modal" className=" text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
+      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
         <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>
             <h className="text-[28px] font-bold">Заказать звонок</h>
@@ -86,8 +94,9 @@ function Modal() {
           </div>
           <div className='pt-[40px]'>
             <label>
-              
-              <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'  placeholder="+7 (___) ___ - __ - __" required/>
+              <div>
+                <PhoneInput/>
+              </div>
             </label>
           </div>
           <div className='pt-[20px]'>
@@ -105,6 +114,7 @@ function Modal() {
     </>
   );
 }
+{/* Кнопка галочки в модальном окне */}
 
 function Checkbox() {
   const [checked, setChecked] = useState(true);
@@ -118,6 +128,45 @@ function Checkbox() {
   </div>;
 }
 
+{/* Инпут окно в модальном окне */}
+
+const PhoneInput = () => {
+  const [phoneNumber, setPhoneNumber] = useState('+7');
+
+  const handleChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ''); 
+  
+    if (value.length >= 1) {
+      value = '+7(' + value.substring(1);
+      if (value.length >= 6) {
+        value = value.substring(0, 6) + ')' + value.substring(6);
+        if (value.length >= 10) {
+          value = value.substring(0, 10) + '-' + value.substring(10);
+          if (value.length >= 13) {
+            value = value.substring(0, 13) + '-' + value.substring(13);
+          }
+        }
+      }
+    }
+
+    // проверяем, был ли символ удален
+    if (e.target.value.length < phoneNumber.length) {
+      setPhoneNumber(e.target.value); // обновляем состояние только если символ был удален
+    } else {
+      setPhoneNumber(value);
+    }
+  };
+
+  return (
+    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'
+      type="tel" 
+      value={phoneNumber} 
+      onChange={handleChange} 
+      placeholder="+7 (___) ___ - __ - __"
+      maxLength={16} 
+    />
+  );
+};
 
 
 export default Home;
