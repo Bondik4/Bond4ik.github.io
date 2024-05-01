@@ -1,16 +1,37 @@
-import  React, { useState } from 'react';
+import  React, { useEffect, useState } from 'react';
 import video from "../media/video/car.mp4";
 import { Link } from 'react-router-dom';
 import Footer from "../components/Footer";
+import Gif from "../components/Gif";
+import Podbor from "../components/podbor";
+import Slider from "../components/Slider"
 
 
 
 function Home() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 0) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
     const [isOpened, setIsOpened] = useState(false);  
     function openModal() {
       document.body.style.overflow = "hidden";
       setIsOpened(true);
       }
+
       
       function closeModal(e) {
       if (e.target.classList.contains('modal')) {
@@ -25,7 +46,7 @@ function Home() {
       }
   return (
     <>
-      <header className="headlobby">
+      <header className={`headlobby ${isScrolled ? 'headlobby-scroll' : ''}`}>
         <div className="container mx-auto" >
           <Link to="/" className="headlobby-brand">
             ElectroSales
@@ -64,6 +85,15 @@ function Home() {
               <button onClick={openModal} className="hero-block__btn">Оставить заявку</button>
             </div>
           </div>
+        </div>
+        <div>
+          <Gif />
+        </div>
+        <div>
+          <Podbor />
+        </div>
+        <div>
+          <Slider />
         </div>
         <div>
           <Footer />
@@ -114,10 +144,11 @@ function Modal({isOpened, changeModalState}) {
     </>
   );
 }
+
 {/* Кнопка галочки в модальном окне */}
 
 function Checkbox() {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   function chengeCheckbox() {
      setChecked(!checked);
@@ -131,7 +162,7 @@ function Checkbox() {
 {/* Инпут окно в модальном окне */}
 
 const PhoneInput = () => {
-  const [phoneNumber, setPhoneNumber] = useState('+7');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleChange = (e) => {
     let value = e.target.value.replace(/\D/g, ''); 
@@ -158,7 +189,7 @@ const PhoneInput = () => {
   };
 
   return (
-    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'
+    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black text-center'
       type="tel" 
       value={phoneNumber} 
       onChange={handleChange} 
@@ -167,6 +198,5 @@ const PhoneInput = () => {
     />
   );
 };
-
 
 export default Home;

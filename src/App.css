@@ -27,14 +27,16 @@
       overflow-x: hidden;
       height: auto;
   }
-  
+
+  /*плав аним появ гуд*/
+
   .headlobby{
       width: 100%;
       height: 120px;
       position: fixed;
       z-index: 11;
       top: 0;
-  
+      transition: background-color 0.4s;
   }
   .headlobby .container {
       display: flex;
@@ -370,4 +372,8 @@
     max-width: 1710px;
     box-sizing: border-box;
     margin: 0 auto;
+  }
+
+  .headlobby-scroll {
+    background-color: black;
   }

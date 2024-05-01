@@ -74,7 +74,7 @@ function Modal({isOpened, changeModalState}) {
           <div className='pt-[30px] text-justify w-[300px] flex gap-[10px] '>
             <Checkbox/>
             <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
-               принимаю условия Соглашения исогласен с обработкой моих персональных данных AutoSales способами и целей указанными 
+               принимаю условия Соглашения и согласен с обработкой моих персональных данных AutoSales способами и целей указанными 
                в Политике</a>
           </div>
         </div>
@@ -86,7 +86,7 @@ function Modal({isOpened, changeModalState}) {
 {/* Кнопка галочки в модальном окне */}
 
 function Checkbox() {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   function chengeCheckbox() {
      setChecked(!checked);
@@ -100,7 +100,7 @@ function Checkbox() {
 {/* Инпут окно в модальном окне */}
 
 const PhoneInput = () => {
-  const [phoneNumber, setPhoneNumber] = useState('+7');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleChange = (e) => {
     let value = e.target.value.replace(/\D/g, ''); 
@@ -127,7 +127,7 @@ const PhoneInput = () => {
   };
 
   return (
-    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black'
+    <input className='p-4 pr-[70px] pl-[70px] border rounded-full border-black text-center'
       type="tel" 
       value={phoneNumber} 
       onChange={handleChange} 
