@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Gif from "../components/Gif";
 import Podbor from "../components/podbor";
-import Slider from "../components/Slider"
+import Star from '../components/star';
+import Advantages from '../components/advantages';
+
 
 
 
@@ -93,7 +95,12 @@ function Home() {
           <Podbor />
         </div>
         <div>
-          <Slider />
+          <Star/>
+        </div>
+        <div>
+        </div>
+        <div>
+          <Advantages />
         </div>
         <div>
           <Footer />
