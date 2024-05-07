@@ -98,8 +98,6 @@ function Home() {
           <Star/>
         </div>
         <div>
-        </div>
-        <div>
           <Advantages />
         </div>
         <div>

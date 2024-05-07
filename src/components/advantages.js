@@ -5,7 +5,7 @@ function Advantages(){
     <div className="bg-black">
       <div className="container mx-auto py-[90px]">
       <img className="max-h-full" src="/media/Line/1.jpg"></img>
-        <div className="">
+        <div className="pt-[50px]">
           <a className="pt-[30px] text-white text-[20px] ">ПРЕИМУЩЕСТВА</a>
           <div className="pt-[20px]">
           <div className="pl-[492px] leading-[80px] text-[80px] text-white font-Bold flex text-right text-justify">Почему клиенты выбирают и покупают электромобили в ElectroSales</div>
@@ -36,6 +36,9 @@ function Advantages(){
             договор или договор купли-продажи, без скрытых схем.
             </a>
           </div>
+        </div>
+        <div className="pt-[50px]">
+          <img className="max-h-full" src="/media/Line/1.jpg"></img>
         </div>
       </div> 
     </div>

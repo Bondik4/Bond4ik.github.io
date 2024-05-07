@@ -2,9 +2,9 @@ import  React, { useState } from 'react';
 
 function podbor(){
   return(
-    <div className="container mx-auto flex py-[90px]" >
+    <div className="flex flex-col lg:flex lg:flex-row container mx-auto py-[90px]" >
       <img className="" src="./media/podbor/1.webp"></img>
-      <div className="pl-[80px] flex flex-col pt-[350px]">
+      <div className=" pl-[80px] flex flex-col lg:pt-[350px]">
         <a className="text-[52px] leading-[70px] font-Bold ">Нужна помощь в подборе автомобиля?</a>
         <a className="text-[20px] pt-[30px] max-w-[410px]">Оставьте нам свои данные и наш менеджер свяжется с вами в течение 15 минут.</a>
         <div className='flex gap-[10px] pt-[30px]'>

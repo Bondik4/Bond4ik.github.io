@@ -170,7 +170,6 @@ function CarTier(){
           <span id="Voyah" className="absolute -top-[120px]" />
           <BlockOFCars name = "Модельный ряд Voyah" image = {4} start = {14} end = {16}/>
         </div>
-
       </div>
     )
   }
@@ -191,7 +190,7 @@ function CarTier(){
           <Modal text = {buttons[image].text} btnClass={buttons[image].btnClass}/>
           <a className="font-bold text-[17px] ">{name}</a>
         </div>
-        <div className = {"grid grid-cols-4 gap-8 grid-rows-" + gridRows}>
+        <div className = {"grid-cols-2 grid md:grid-cols-4 gap-8 grid-rows-" + gridRows}>
           { arr.map((elem, i) => { return <SingleCar text = {elem.text} carImage={elem.image} key = {i}/> }) }
         </div>
       </div>
@@ -201,8 +200,8 @@ function CarTier(){
   function SingleCar({text, carImage})
   {
     return(
-      <div className = "flex flex-col items-center my-6 gap-4">
-          <img className="w-[227px]" src={carImage}/>
+      <div className = "flex flex-col items-center my-6 gap-4 ">
+          <img className="md:w-[227px]" src={carImage}/>
           <a className="font-bold text-[14px]">{text}</a>
       </div>
     );
@@ -226,9 +225,9 @@ function CarTier(){
   
     return (
       <>
-        <button data-open-modal="modal" className={"rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
+        <button data-open-modal="modal" className={"pr-[100px] rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
         <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
-          <div className="modal-window">
+          <div className="modal-window ">
             {text}
           </div>
           <div className="overlay" />
