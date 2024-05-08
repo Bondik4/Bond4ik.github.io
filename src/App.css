@@ -40,7 +40,6 @@
   }
   .headlobby .container {
       display: flex;
-      justify-content:  space-between;
       align-items: center;
       height: 100%;
   }
@@ -65,10 +64,8 @@
   }
   
   .headlobby-wrap{
-    display: flex;
     flex-flow: row nowrap;
     gap: 40px;
-    padding-left: 100px;
   }
   
   .headlobby-wrap a{
@@ -83,6 +80,7 @@
     color: #fff;
     border-radius: 30px;
     border: 1px solid #ffffff00;
+    text-align: center;
   }
   
   .headlobby-wrap a:hover {

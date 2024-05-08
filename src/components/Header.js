@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import burgerIcon from '../media/images/burger-menu.svg'
 
 function Header(){
   const [isOpened, setIsOpened] = useState(false);  
@@ -19,14 +20,25 @@ function Header(){
       if (isOpened) {closeModal(e);} 
       else {openModal();}
       }
+      const [burgerIsOpen, setBurgerIsOpen] = useState(false);
+
+      function burgerClick() {
+        setBurgerIsOpen(true);
+      }
+      function closeBurgerClick(e) {
+        if (e.target.id === "burger-modal") {
+          setBurgerIsOpen(false);
+        }
+      }
   return(
     <header className="headlobby bg-black">
-        <div className="container mx-auto" >
-        <Link to="/" className="headlobby-brand">
+        <div className="w-full container justify-around mx-auto" >
+          <img src={burgerIcon} fill="none" width="50px" className='flex 2xl:hidden' onClick={burgerClick} />
+          <Link to="/" className="headlobby-brand">
             ElectroSales
           </Link>
-          <nav className="headlobby-wrap">
-            <a href="#">Авто в наличии</a>
+          <nav className="headlobby-wrap hidden 2xl:flex">
+            <a  href="#">Авто в наличии</a>
             <Link to="/CarModel">Модельный ряд</Link>
             <a href="#">Сервис</a>
             <Link to="/Services">Услуги</Link>
@@ -37,9 +49,11 @@ function Header(){
             <Link className="header__charging" to="/Map">Зарядные станции</Link>
             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.65073 11.7909C8.35078 12.0765 8.3392 12.5513 8.62486 12.8512C8.91053 13.1512 9.38526 13.1628 9.68521 12.8771L8.65073 11.7909ZM13.1852 9.54375C13.4852 9.25809 13.4967 8.78336 13.2111 8.48341C12.9254 8.18346 12.4507 8.17188 12.1507 8.45755L13.1852 9.54375ZM12.1507 9.54408C12.4507 9.82974 12.9254 9.81817 13.2111 9.51822C13.4967 9.21827 13.4852 8.74354 13.1852 8.45787L12.1507 9.54408ZM9.68521 5.12454C9.38526 4.83888 8.91053 4.85045 8.62486 5.1504C8.3392 5.45035 8.35078 5.92508 8.65073 6.21075L9.68521 5.12454ZM12.668 9.75065C13.0822 9.75065 13.418 9.41486 13.418 9.00065C13.418 8.58644 13.0822 8.25065 12.668 8.25065V9.75065ZM3.33463 8.25065C2.92042 8.25065 2.58463 8.58644 2.58463 9.00065C2.58463 9.41486 2.92042 9.75065 3.33463 9.75065V8.25065ZM9.68521 12.8771L13.1852 9.54375L12.1507 8.45755L8.65073 11.7909L9.68521 12.8771ZM13.1852 8.45787L9.68521 5.12454L8.65073 6.21075L12.1507 9.54408L13.1852 8.45787ZM12.668 8.25065H3.33463V9.75065L12.668 9.75065V8.25065Z" fill="white"></path></svg>
           </div>
-          <div className="header__feedback">
-            <a className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
-            <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
+          <div className="header__feedback ">
+            <a id="modal" className='header__phone' href="tel:+79119745843">+7 911 974-58-43</a>
+            <div>
+              <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
+            </div>
           </div>
         </div>
       </header>

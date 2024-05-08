@@ -33,11 +33,11 @@ function AboutUs() {
             в России. Кроме того, CarSales вносит свой вклад в развитие зарядной инфраструктуры в 
             Питире, размещая новые зарядные станции на своих локациях.</a>
         </div>
-        <div className="flex flex-col lg:flex lg:flex-row"> 
-          <img className="rounded-lg w-full sm:w-[700px]" src="./media/AboutUs/1.webp"></img>
+        <div className="flex flex-col xl:flex xl:flex-row"> 
+          <img className="rounded-xl flex " src="./media/AboutUs/1.webp"></img>
           <div className="flex flex-col pt-[70px] pb-[70px] md:pl-0">
-            <h className="text-[50px] font-Bold lg:pl-[80px] pl-[7px] pr-[7px]">Миссия компании</h>
-            <a className="text-[19px] pt-[20px] text-justify pl-[7px] pr-[7px] lg:pl-[80px]">
+            <h className="text-[50px] font-Bold  xl:pl-[80px] pl-[7px] pr-[7px]">Миссия компании</h>
+            <a className="text-[19px] pt-[20px] text-justify pl-[7px] pr-[7px] xl:pl-[80px]">
               За десятилетия своей истории компания CarSales 
               зарекомендовала себя как надежный партнер и крупнейший 
               независимый дистрибьютор автомобилей в России. Наша основная миссия: 
@@ -47,7 +47,7 @@ function AboutUs() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col-reverse lg:flex lg:flex-row">
+        <div className="flex flex-col-reverse xl:flex xl:flex-row">
           <div className="flex flex-col pt-[100px] pb-[80px] pr-[80px] md:pr-0">
             <h className="text-[48px] font-Bold pl-[5px]">Преимущества ElectroSales</h>
             <div>
@@ -64,7 +64,7 @@ function AboutUs() {
             </div>
           </div>
           <div className="flex flex-col md:pt-[100px]">
-            <img className="rounded-lg lg:w-[700px] " src="./media/AboutUs/2.webp"></img>
+            <img className="rounded-xl xl:w-[700px] " src="./media/AboutUs/2.webp"></img>
           </div>
         </div>
         <div className="text-[19px] py-[50px] pl-[7px] pr-[7px] ">
@@ -92,7 +92,7 @@ function AboutUs() {
               Они прошли специальную подготовку по обслуживанию электромобилей.</a>
           </div>
         </div>
-        <div className="flex flex-col justify-between pt-[50px] lg:flex lg:flex-row">
+        <div className="flex flex-col justify-between pt-[50px] xl:flex xl:flex-row">
           <div className="flex flex-col" >
             <h className="text-[33px] font-Bold pl-[7px] pr-[7px]">Какие услуги мы оказываем:</h>
             <div>
@@ -107,7 +107,7 @@ function AboutUs() {
               </ul>
             </div>
           </div>
-          <img className="rounded-lg " src="./media/AboutUs/3.webp"></img>
+          <img className="rounded-xl " src="./media/AboutUs/3.webp"></img>
         </div>
         <div className="text-[19px] pt-[50px] pb-[25px] pl-[7px] pr-[7px]">
           <a>Откройте мир мощных, экологичных и роскошных автомобилей вместе с автосалоном 

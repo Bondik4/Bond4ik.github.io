@@ -2,17 +2,17 @@ import  React, { useState } from 'react';
 
 function podbor(){
   return(
-    <div className="flex flex-col lg:flex lg:flex-row container mx-auto py-[90px]" >
-      <img className="" src="./media/podbor/1.webp"></img>
-      <div className=" pl-[80px] flex flex-col lg:pt-[350px]">
-        <a className="text-[52px] leading-[70px] font-Bold ">Нужна помощь в подборе автомобиля?</a>
+    <div className="flex flex-col xl:flex xl:flex-row container mx-auto py-[90px]" >
+      <img className="h-[300px] max-w-full 2xl:max-h-full object-cover" src="./media/podbor/1.webp"></img>
+      <div className=" max-w-full p-8 flex flex-col items-center xl:items-start xl:pt-[350px]">
+        <a className="text-[52px] leading-[70px] font-Bold text-center xl:text-left">Нужна помощь в подборе автомобиля?</a>
         <a className="text-[20px] pt-[30px] max-w-[410px]">Оставьте нам свои данные и наш менеджер свяжется с вами в течение 15 минут.</a>
         <div className='flex gap-[10px] pt-[30px]'>
             <div className=''>
             <PhoneInput/>
           </div>
           <div className=''>
-              <button className='font-Bold p-5 pl-[100px] pr-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Отправить</button>
+              <button className='font-Bold p-5 pl-[10px] pr-[10px] lg:p-5 lg:pl-[100px] lg:pr-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Отправить</button>
           </div>
         </div>
           <div className='pt-[30px] text-justify w-[500px] flex gap-[10px] '>
