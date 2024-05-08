@@ -268,7 +268,7 @@
     z-index: 2;
     width: 550px;
     border-radius: 10px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+    box-shadow: 0 10px 15px #00000066;
     background-color: #fff;
     padding: 30px;
   }
@@ -314,7 +314,6 @@
   }
   
   .hero-block__wrap .h1-block h1 {
-    font-size: 80px;
     color: #fff;
     font-weight: 400;
     padding-left: 15px;
@@ -375,3 +374,5 @@
   .headlobby-scroll {
     background-color: black;
   }
+
+  /*Тест*/

@@ -2,25 +2,28 @@ import  React, { useState } from 'react';
 
 function podbor(){
   return(
-    <div className="flex flex-col xl:flex xl:flex-row container mx-auto py-[90px]" >
-      <img className="h-[300px] max-w-full 2xl:max-h-full object-cover" src="./media/podbor/1.webp"></img>
-      <div className=" max-w-full p-8 flex flex-col items-center xl:items-start xl:pt-[350px]">
-        <a className="text-[52px] leading-[70px] font-Bold text-center xl:text-left">Нужна помощь в подборе автомобиля?</a>
-        <a className="text-[20px] pt-[30px] max-w-[410px]">Оставьте нам свои данные и наш менеджер свяжется с вами в течение 15 минут.</a>
-        <div className='flex gap-[10px] pt-[30px]'>
-            <div className=''>
+    <div className="flex flex-col items-center xl:flex-row container mx-auto py-10 lg:py-20">
+      <img className="w-full lg:w-1/2" src="./media/podbor/1.webp" alt="car"></img>
+      <div className="lg:pl-8 lg:pt-0 lg:w-1/2">
+        <div className="text-lg lg:text-4xl font-bold text-center lg:text-left mb-4">Нужна помощь в подборе автомобиля?</div>
+        <div className="text-sm lg:text-lg text-center lg:text-left mb-4 mx-4 lg:mx-0 max-w-md">
+          Оставьте нам свои данные и наш менеджер свяжется с вами в течение 15 минут.
+        </div>
+        <div className='flex flex-col lg:flex-row gap-4 items-center justify-center lg:justify-start'>
+          <div>
             <PhoneInput/>
           </div>
-          <div className=''>
-              <button className='font-Bold p-5 pl-[10px] pr-[10px] lg:p-5 lg:pl-[100px] lg:pr-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]'>Отправить</button>
+          <div>
+            <button className='font-bold py-4 px-12 px-4 bg-[#02283b] text-white rounded-full hover:bg-[#91036d] duration-300'>Отправить</button>
           </div>
         </div>
-          <div className='pt-[30px] text-justify w-[500px] flex gap-[10px] '>
-            <Checkbox/>
-            <a className='text-[13px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
-               принимаю условия cоглашения и согласен с обработкой моих персональных данных AutoSales способами и целей указанными 
-               в Политике</a>
-          </div>
+        <div className='flex text-sm mt-4 text-center lg:text-left mx-4 lg:mx-0 max-w-md'>
+          <Checkbox/>
+          <span className='ml-2 flex text-justify'>
+            Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
+            принимаю условия cоглашения и согласен с обработкой моих персональных данных AutoSales способами и целями указанными в Политике
+          </span>
+        </div>
       </div>
     </div>
   )
@@ -70,7 +73,7 @@ const PhoneInput = () => {
   };
 
   return (
-    <input className='p-4 pl-[40px] pr-[40px] border rounded-full border-black text-center'
+    <input className='p-4 xl:pl-[40px] xl:pr-[40px] border rounded-full border-black text-center'
       type="tel" 
       value={phoneNumber} 
       onChange={handleChange} 
