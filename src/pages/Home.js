@@ -1,4 +1,4 @@
-import  React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import video from "../media/video/car.mp4";
 import { Link } from 'react-router-dom';
 import Footer from "../components/Footer";
@@ -51,12 +51,16 @@ function Home() {
 
       function burgerClick() {
         setBurgerIsOpen(true);
+        document.body.style.overflow = "hidden"; 
       }
+
       function closeBurgerClick(e) {
         if (e.target.id === "burger-modal") {
           setBurgerIsOpen(false);
+          document.body.style.overflow = "scroll"; 
         }
       }
+      
   return (
     <>
       <header className={`headlobby  ${isScrolled ? 'headlobby-scroll' : ''}`}>
@@ -66,9 +70,9 @@ function Home() {
             ElectroSales
           </Link>
           <nav className="headlobby-wrap hidden 2xl:flex">
-            <a  href="#">Авто в наличии</a>
+            <Link to="/CarModel">Авто в наличии</Link>
             <Link to="/CarModel">Модельный ряд</Link>
-            <a href="#">Сервис</a>
+            <Link to="/Services">Сервис</Link>
             <Link to="/Services">Услуги</Link>
             <Link to="/AboutUs">О нас</Link>
           </nav>
@@ -87,9 +91,11 @@ function Home() {
           </div>
         </div>
       </header>
-      
-      {burgerIsOpen && (
-        <div id='burger-modal' onClick={closeBurgerClick} className='flex justify-start items-start w-full h-full fixed top-0 left-0 z-20' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
+
+      {/* Bg-menu */}
+
+      {burgerIsOpen ? (
+        <div id='burger-modal' onClick={closeBurgerClick} className='flex justify-start items-start w-full h-full fixed top-0 left-0 z-20 slide-in' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
           <div className='relative flex flex-col text-white '>
             <div className='flex justify-between items-center mb-4'>
               <div className='flex items-center'>
@@ -98,9 +104,9 @@ function Home() {
             </div>
             <div className='w-screen h-[1px] bg-white mb-2'></div>
             <div className='flex flex-col pl-6 gap-4'>
-              <a href="#" className="text-2xl my-2">Авто в наличии</a>
+              <Link to="/CarModel" className="text-2xl my-2">Авто в наличии</Link>
               <Link to="/CarModel" className="text-2xl my-2">Модельный ряд</Link>
-              <a href="#" className="text-2xl my-2">Сервис</a>
+              <Link to="/Services" className="text-2xl my-2">Сервис</Link>
               <Link to="/Services" className="text-2xl my-2">Услуги</Link>
               <Link to="/AboutUs" className="text-2xl my-2">О нас</Link>
             </div>
@@ -112,7 +118,31 @@ function Home() {
             </div>
           </div>
         </div>
-      )}
+      ) : (
+        <div id='burger-modal' onClick={closeBurgerClick} className='flex justify-start items-start w-full h-full fixed top-0 left-0 z-20 slide-out' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
+          <div className='relative flex flex-col text-white '>
+            <div className='flex justify-between items-center mb-4'>
+              <div className='flex items-center'>
+                <Link to="/" className="headlobby-brand text-3xl pl-6 pt-3">ElectroSales</Link>
+              </div>
+            </div>
+            <div className='w-screen h-[1px] bg-white mb-2'></div>
+            <div className='flex flex-col pl-6 gap-4'>
+              <Link to="/CarModel" className="text-2xl my-2">Авто в наличии</Link>
+              <Link to="/CarModel" className="text-2xl my-2">Модельный ряд</Link>
+              <Link to="/Services" className="text-2xl my-2">Сервис</Link>
+              <Link to="/Services" className="text-2xl my-2">Услуги</Link>
+              <Link to="/AboutUs" className="text-2xl my-2">О нас</Link>
+            </div>
+              <div className='fixed bottom-0 pt-2 '>
+                <div className='w-screen h-[1px] bg-white mt-4'></div>
+                <a id="modal" className='header__phone text-2xl pt-5 pb-5 text-white pl-3 flex items-center' href="tel:+79119745843">
+                  +7 911 974-58-43
+                </a>
+            </div>
+          </div>
+        </div>
+      )} 
 
       {/* Main */}
       <main>
