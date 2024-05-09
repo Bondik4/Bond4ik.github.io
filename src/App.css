@@ -51,7 +51,6 @@
   
   .headlobby-brand{
     font-weight: 700;
-    font-size: 26px;
     text-decoration: none;
     color:#000;
     transition: all .09s ease-in-out;
@@ -112,9 +111,6 @@
   }
 
   .header__phone {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
     color: #fff;
     transition: .35s;
     white-space: nowrap;
@@ -336,18 +332,12 @@
     margin-top: -100px;
     height: calc(100vh - 75px);
   }
-  
-  .hero-block__conteiner {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-  }
+
   
   .hero-block__btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 49.5%;
     height: 60px;
     font-size: 16px;
     font-weight: 500;

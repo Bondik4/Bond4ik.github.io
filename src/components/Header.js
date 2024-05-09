@@ -34,7 +34,7 @@ function Header(){
     <header className="headlobby bg-black">
         <div className="w-full container justify-around mx-auto" >
           <img src={burgerIcon} width="50px" className=' flex 2xl:hidden' onClick={burgerClick} />
-          <Link to="/" className="headlobby-brand">
+          <Link to="/" className="headlobby-brand text-[26px]">
             ElectroSales
           </Link>
           <nav className="headlobby-wrap hidden 2xl:flex">
@@ -51,13 +51,38 @@ function Header(){
           </div>
           <div className="header__feedback ">
             <div className='hidden sm:flex'>
-             <a id="modal" className='header__phone ' href="tel:+79119745843">+7 911 974-58-43</a> 
+             <a id="modal" className='header__phone text-lg' href="tel:+79119745843">+7 911 974-58-43</a> 
             </div>
             <div className='hidden sm:flex'>
               <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
             </div>
           </div>
         </div>
+        {burgerIsOpen && (
+        <div id='burger-modal' onClick={closeBurgerClick} className='flex justify-start items-start w-full h-full fixed top-0 left-0 z-20' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
+          <div className='relative flex flex-col text-white '>
+            <div className='flex justify-between items-center mb-4'>
+              <div className='flex items-center'>
+                <Link to="/" className="headlobby-brand text-3xl pl-6 pt-3">ElectroSales</Link>
+              </div>
+            </div>
+            <div className='w-screen h-[1px] bg-white mb-2'></div>
+            <div className='flex flex-col pl-6 gap-4'>
+              <a href="#" className="text-2xl my-2">Авто в наличии</a>
+              <Link to="/CarModel" className="text-2xl my-2">Модельный ряд</Link>
+              <a href="#" className="text-2xl my-2">Сервис</a>
+              <Link to="/Services" className="text-2xl my-2">Услуги</Link>
+              <Link to="/AboutUs" className="text-2xl my-2">О нас</Link>
+            </div>
+              <div className='fixed bottom-0 pt-2 '>
+                <div className='w-screen h-[1px] bg-white mt-4'></div>
+                <a id="modal" className='header__phone text-2xl pt-5 pb-5 text-white pl-3 flex items-center' href="tel:+79119745843">
+                  +7 911 974-58-43
+                </a>
+            </div>
+          </div>
+        </div>
+      )}
       </header>
   )
 }
@@ -69,7 +94,7 @@ function Header(){
 function Modal({isOpened, changeModalState}) {
   return (
     <>
-      <a data-open-modal="modal" className="text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
+      <a data-open-modal="modal" className="pl-1 text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
       <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
         <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>
