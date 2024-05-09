@@ -14,7 +14,7 @@ function podbor(){
             <PhoneInput/>
           </div>
           <div>
-            <button className='font-bold py-4 px-12 px-4 bg-[#02283b] text-white rounded-full hover:bg-[#91036d] duration-300'>Отправить</button>
+            <button className='font-bold py-4 px-[70px] bg-[#02283b] text-white rounded-full hover:bg-[#91036d] duration-300'>Отправить</button>
           </div>
         </div>
         <div className='flex text-sm mt-4 text-center lg:text-left mx-4 lg:mx-0 max-w-md'>

@@ -132,7 +132,7 @@ function Services() {
                     Мы гарантируем быстрое и прозрачное оформление сделки.
                     </a>
                   <div className="pt-[60px] ">
-                    <a className="font-Bold зи p-5 sm:pr-[100px] sm:pl-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]">Узнать подробнее</a>
+                    <a className="font-Bold p-5 sm:pr-[100px] sm:pl-[100px] text-white bg-[#02283b] rounded-full hover:bg-[#91036d] duration-[90ms]">Узнать подробнее</a>
                   </div>
                 </div>
               </div>

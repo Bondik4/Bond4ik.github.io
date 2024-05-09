@@ -68,11 +68,11 @@ function Header(){
             </div>
             <div className='w-screen h-[1px] bg-white mb-2'></div>
             <div className='flex flex-col pl-6 gap-4'>
-              <a href="#" className="text-2xl my-2">Авто в наличии</a>
-              <Link to="/CarModel" className="text-2xl my-2">Модельный ряд</Link>
-              <a href="#" className="text-2xl my-2">Сервис</a>
-              <Link to="/Services" className="text-2xl my-2">Услуги</Link>
-              <Link to="/AboutUs" className="text-2xl my-2">О нас</Link>
+              <a href="#" className="text-2xl my-2 cursor-pointer">Авто в наличии</a>
+              <Link to="/CarModel" className="text-2xl my-2 cursor-pointer">Модельный ряд</Link>
+              <a href="#" className="text-2xl my-2 cursor-pointer">Сервис</a>
+              <Link to="/Services" className="text-2xl my-2 cursor-pointer">Услуги</Link>
+              <Link to="/AboutUs" className="text-2xl my-2 cursor-pointer">О нас</Link>
             </div>
               <div className='fixed bottom-0 pt-2 '>
                 <div className='w-screen h-[1px] bg-white mt-4'></div>
