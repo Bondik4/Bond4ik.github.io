@@ -54,7 +54,7 @@ function Services() {
                 <div className="absolute text-white bottom-0 z-0 p-6">
                   <h1 className="text-[20px] font-Bold ">Гарантия</h1>
                 </div>
-                <div className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
+                <div onClick={openModal} className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
                   <svg className="" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -65,7 +65,7 @@ function Services() {
                 <div className="absolute text-white bottom-0 z-0 p-6">
                   <h1 className="text-[17px] lg:text-[20px] font-Bold">Сервисное обслуживание</h1>
                 </div>
-                <div className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
+                <div onClick={openModal} className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -76,7 +76,7 @@ function Services() {
                 <div className="absolute text-white bottom-0 z-0 p-6">
                   <h1 className="text-[20px] font-Bold">Тест-драй</h1>
                 </div>
-                <div className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
+                <div onClick={openModal} className="absolute text-white bottom-0 right-0 z-0 p-2 md:p-0 lg:p-2 border rounded-full mb-3 mr-3 stroke-[White] hover:bg-white hover:stroke-[#91036d] duration-[90ms]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none">
                       <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
