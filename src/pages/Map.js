@@ -2,11 +2,13 @@ import Header from "../components/Header";
 import Maplockation from "../components/Maplockation";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';  
+import OnlineConsultantButton from '../components/OnlineConsultantButton';
 
 function Map(){
   return(
     <div>
       <Header/>
+      <OnlineConsultantButton />
       <div className="container mx-auto">
         <div className="pt-[140px] pl-[5px] pr-[5px]">
           <Link className="text-slate-400 text-[14px] " to="/">Главная </Link>

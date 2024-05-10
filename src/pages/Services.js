@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom'; 
 import React, { useState } from 'react';
+import OnlineConsultantButton from '../components/OnlineConsultantButton';
 
 
 function Services() {
@@ -11,6 +12,7 @@ function Services() {
       setIsOpened(true);
       }
 
+      
       
       function closeModal(e) {
       if (e.target.classList.contains('modal')) {
@@ -26,8 +28,9 @@ function Services() {
 
       return (
         <div className="flex flex-col min-h-screen">
-          <div>
+          <div className="">
             <Header />
+            <OnlineConsultantButton />
             <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
           </div>
           <div className="container mx-auto">
@@ -181,7 +184,7 @@ function Modal({isOpened, changeModalState}) {
     <>
       <a data-open-modal="modal" className="pl-1 text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
       <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
-        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-20 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
+        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-30 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
           <div className='flex flex-col place-items-center'>
             <h className="text-[28px] font-bold">Заказать звонок</h>
             <a className='pt-[20px] text-center text-slate-400 w-[300px]'>

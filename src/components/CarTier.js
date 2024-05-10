@@ -186,7 +186,7 @@ function CarTier(){
     }
     return(
       <div className="bg-white rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] px-[30px] py-[20px]">
-        <div className="bg-[white] flex items-center gap-5">
+        <div className=" bg-[white] flex items-center gap-5">
           <Modal text = {buttons[image].text} btnClass={buttons[image].btnClass}/>
           <a className="font-bold text-[17px] ">{name}</a>
         </div>
@@ -225,9 +225,9 @@ function CarTier(){
   
     return (
       <>
-        <button data-open-modal="modal" className={"pr-[100px] rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
+        <button data-open-modal="modal" className={" pr-[100px] rounded-lg shadow-[0_10px_40px_-0px_rgba(0,0,0,0.3)] " + btnClass} onClick={openModal} />
         <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={closeModal}>
-          <div className="modal-window ">
+          <div className="modal-window">
             {text}
           </div>
           <div className="overlay" />

@@ -7,6 +7,7 @@ import Podbor from "../components/podbor";
 import Star from '../components/star';
 import Advantages from '../components/advantages';
 import burgerIcon from '../media/images/burger-menu.svg'
+import OnlineConsultantButton from '../components/OnlineConsultantButton';
 
 
 
@@ -64,6 +65,7 @@ function Home() {
   return (
     <>
       <header className={`headlobby  ${isScrolled ? 'headlobby-scroll' : ''}`}>
+      <OnlineConsultantButton />
         <div className="w-full container justify-around mx-auto" >
           <img src={burgerIcon} width="50px" className=' flex 2xl:hidden' onClick={burgerClick} />
           <Link to="/" className="headlobby-brand text-[26px]">
