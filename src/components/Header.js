@@ -38,9 +38,9 @@ function Header(){
             ElectroSales
           </Link>
           <nav className="headlobby-wrap hidden 2xl:flex">
-            <Link  href="#">Авто в наличии</Link>
+            <Link to="/CarModel">Авто в наличии</Link>
             <Link to="/CarModel">Модельный ряд</Link>
-            <Link href="#">Сервис</Link>
+            <Link to="/Services">Сервис</Link>
             <Link to="/Services">Услуги</Link>
             <Link to="/AboutUs">О нас</Link>
           </nav>
