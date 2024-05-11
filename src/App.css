@@ -341,7 +341,7 @@
   
   .hero-block__btn:hover {
     background-color: #ffffff;
-    color: #91036d;
+    color: rgb(145, 3, 109);
   }
   
   .hero-block__wrap .container{
@@ -370,3 +370,4 @@
   #burger-modal .w-full {
     width: 100vw;
   }
+  
