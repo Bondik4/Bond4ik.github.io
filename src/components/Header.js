@@ -59,7 +59,7 @@ function Header(){
           </div>
         </div>
         {burgerIsOpen && (
-        <div id='burger-modal' onClick={closeBurgerClick} className='flex justify-start items-start w-full h-full fixed top-0 left-0 z-20' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
+        <div id='burger-modal' onClick={closeBurgerClick} className='appear-animation flex justify-start items-start w-full h-full fixed top-0 left-0 z-20' style={{background: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.6) 100%)'}}>
           <div className='relative flex flex-col text-white '>
             <div className='flex justify-between items-center mb-4'>
               <div className='flex items-center'>
@@ -82,8 +82,8 @@ function Header(){
             </div>
           </div>
         </div>
-      )}
-      </header>
+        )}
+    </header>
   )
 }
 

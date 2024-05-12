@@ -371,3 +371,29 @@
     width: 100vw;
   }
   
+  .appear-animation {
+    animation: appear 1s both;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.disappear-animation {
+  animation: disappear 1s both;
+}
+
+@keyframes disappear {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
