@@ -164,7 +164,8 @@ function Home() {
 {/* Скрипты */}
 {/* Модальное окно */}
 
-function Modal({isOpened, changeModalState}) {
+
+export function Modal({isOpened, changeModalState}) {
   return (
     <>
       <a data-open-modal="modal" className="pl-1 text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
