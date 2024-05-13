@@ -18,7 +18,7 @@ function AboutUs() {
           </div>
         </div>
         <div className="pt-[25px]">
-          <h className="text-[50px] font-Bold pl-[3px]">О нас</h>
+          <a className="text-[50px] font-Bold pl-[3px]">О нас</a>
         </div>
        <div className="text-[19px] pt-[25px] text-justify pl-[7px] pr-[7px]">
           <a>CarSales — одна из крупнейших сетей автосалонов в России, которая начала свою историю 
@@ -38,7 +38,7 @@ function AboutUs() {
         <div className="flex flex-col xl:flex xl:flex-row"> 
           <img className="rounded-xl flex " src="./media/AboutUs/1.webp"></img>
           <div className="flex flex-col pt-[70px] pb-[70px] md:pl-0">
-            <h className="text-[50px] font-Bold  xl:pl-[80px] pl-[7px] pr-[7px]">Миссия компании</h>
+            <a className="text-[50px] font-Bold  xl:pl-[80px] pl-[7px] pr-[7px]">Миссия компании</a>
             <a className="text-[19px] pt-[20px] text-justify pl-[7px] pr-[7px] xl:pl-[80px]">
               За десятилетия своей истории компания CarSales 
               зарекомендовала себя как надежный партнер и крупнейший 
@@ -51,7 +51,7 @@ function AboutUs() {
         </div>
         <div className="flex flex-col-reverse xl:flex xl:flex-row">
           <div className="flex flex-col pt-[100px] pb-[80px] pr-[80px] md:pr-0">
-            <h className="text-[48px] font-Bold pl-[5px]">Преимущества ElectroSales</h>
+            <a className="text-[48px] font-Bold pl-[5px]">Преимущества ElectroSales</a>
             <div>
               <ul className="text-[21px] list-disc pl-[30px] pt-[20px] ">
                 <li>широкий ассортимент электрических автомобилей от популярных производителей;</li>
@@ -74,7 +74,7 @@ function AboutUs() {
             Предлагаем Вам лично оценить наше гостеприимство и профессиональный подход.</a>
         </div>
         <div className="pl-[7px] pr-[7px]">
-          <h className="text-[50px] font-Bold ">Почему стоит выбрать ElectroSales</h>
+          <a className="text-[50px] font-Bold ">Почему стоит выбрать ElectroSales</a>
           <div className="text-[19px] pt-[20px]">
             <a>Мы привозим электромобили из Китая разными путями, в зависимости от того, какой дешевле 
               для конкретного автомобиля. И мы не берем деньги за гарантию, тем более, что вероятность 
@@ -96,7 +96,7 @@ function AboutUs() {
         </div>
         <div className="flex flex-col justify-between pt-[50px] xl:flex xl:flex-row">
           <div className="flex flex-col" >
-            <h className="text-[33px] font-Bold pl-[7px] pr-[7px]">Какие услуги мы оказываем:</h>
+            <a className="text-[33px] font-Bold pl-[7px] pr-[7px]">Какие услуги мы оказываем:</a>
             <div>
               <ul className="text-[22px] list-disc pl-[30px] pt-[20px]">
                 <li>продажа новых автомобилей;</li>

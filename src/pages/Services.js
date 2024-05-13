@@ -39,7 +39,7 @@ function Services() {
               <a className="text-[14px] sm:text-base">— Услуги</a>
             </div>
             <div className="pt-[25px] text-center xl:text-left">
-              <h className="text-[50px] font-Bold sm:text-4xl md:text-5xl ">Покупателям</h>
+              <a className="text-[50px] font-Bold sm:text-4xl md:text-5xl ">Покупателям</a>
             </div>
             <div className="text-[20px] pt-[25px] text-justify pl-[7px] pr-[7px]">
               <a>ElectroSales — автосалон, специализирующийся на продаже и обслуживанию 
@@ -85,11 +85,11 @@ function Services() {
             </div>
             <div>
               <div className="pt-[35px] text-center xl:text-left"> 
-                <h className="text-[40px] font-Bold">Услуги нашего автосалона</h>
+                <a className="text-[40px] font-Bold">Услуги нашего автосалона</a>
               </div>
                 <div className="flex flex-col xl:flex-row">
                   <div className="flex flex-col lx:pr-[80px] pt-[20px] xl:pt-[80px] sm:pb-[80px]  text-center xl:text-left">
-                    <h className="text-[28px]">Продажа новых автомобилей</h>
+                    <a className="text-[28px]">Продажа новых автомобилей</a>
                       <a className="text-[20px] pt-[35px] ">В нашем шоуруме вы найдете модели брендов Voyah, Zeekr, Li Auto, BYD, NIO и других популярных производителей.
                         Менеджеры помогут разобраться в характеристиках и встроенных опциях комфорта, 
                         а также расскажут о доступных комплектациях.
@@ -103,7 +103,7 @@ function Services() {
               <div className="flex flex flex-col xl:flex-row pt-[70px]">
                 <img className="rounded-lg xl:w-[770px]" src="./media/Services/5.webp"></img>
                 <div className="flex flex-col pt-[80px] xl:pb-[80px] xl:pl-[80px] text-center xl:text-left">
-                  <h className="text-[28px]">Тест-драйв автомобиля</h>
+                  <a className="text-[28px]">Тест-драйв автомобиля</a>
                   <a className="text-[20px] pt-[35px] ">Мы сотрудничаем с крупнейшими страховыми компаниями страны, поэтому предлагаем более пяти видов страхования, 
                   включая КАСКО, ОСАГО, GAP, страхование дополнительного оборудования и имущества. Вы можете застраховать автомобиль во время сделки, не покидая наш автосалон.
                   </a>
@@ -114,7 +114,7 @@ function Services() {
               </div>
               <div className="flex flex flex-col xl:flex-row pt-[70px]">
                   <div className="flex flex-col xl:pt-[80px] pb-[80px] xl:pr-[80px] text-center xl:text-left">
-                    <h className="text-[28px]">Установка зарядных станций</h>
+                    <a className="text-[28px]">Установка зарядных станций</a>
                       <a className="text-[20px] pt-[35px] ">Если в вашем доме нет оборудования, чтобы заряжать электромобиль, мы можем его установить. 
                       Наши специалисты выполнят установку сертифицированного оборудования от производителя той марки автомобиля, который вы купите.
                       </a>
@@ -127,7 +127,7 @@ function Services() {
                 <div className="flex flex flex-col xl:flex-row pt-[70px]">
                   <img className="rounded-lg xl:w-[770px]" src="./media/Services/7.webp"></img>
                 <div className="flex flex-col pt-[80px] xl:pb-[80px] xl:pl-[80px] text-center xl:text-left">
-                  <h className="text-[28px]">Выкуп автомобилей с пробегом</h>
+                  <a className="text-[28px]">Выкуп автомобилей с пробегом</a>
                     <a className="text-[20px] pt-[35px] ">Если вы хотите продать свой текущий автомобиль, команда наших экспертов оценит его и предложит справедливую выкупную цену. 
                     Мы гарантируем быстрое и прозрачное оформление сделки.
                     </a>
@@ -138,7 +138,7 @@ function Services() {
               </div>
               <div className="flex flex flex-col xl:flex-row pt-[70px]">
                   <div className="flex flex-col xl:pt-[80px] pb-[80px] xl:pr-[80px] text-center xl:text-left">
-                    <h className="text-[28px]">Финансовые программы</h>
+                    <a className="text-[28px]">Финансовые программы</a>
                       <a className="text-[20px] pt-[35px] ">Если в вашем доме нет оборудования, чтобы заряжать электромобиль, мы можем его установить. 
                       Наши специалисты выполнят установку сертифицированного оборудования от производителя той марки автомобиля, который вы купите.
                       </a>
@@ -151,7 +151,7 @@ function Services() {
                 <div className="flex flex flex-col xl:flex-row pt-[70px]">
                   <img className="rounded-lg xl:w-[770px]" src="./media/Services/9.webp"></img>
                 <div className="flex flex-col pt-[80px] xl:pb-[80px] xl:pl-[80px] text-center xl:text-left">
-                  <h className="text-[28px]">Страхование</h>
+                  <a className="text-[28px]">Страхование</a>
                     <a className="text-[20px] pt-[35px] ">Если вы хотите продать свой текущий автомобиль, команда наших экспертов оценит его и предложит справедливую выкупную цену. 
                     Мы гарантируем быстрое и прозрачное оформление сделки.
                     </a>
@@ -179,17 +179,17 @@ function Services() {
 {/* Скрипты */}
 {/* Модальное окно */}
 
-function Modal({isOpened, changeModalState}) {
+export function Modal({ isOpened, changeModalState }) {
   return (
     <>
       <a data-open-modal="modal" className="pl-1 text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
-      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
-        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-30 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
+      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" data-testid="modal-out" onClick={changeModalState}>
+        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]" data-testid="modal-body">
           <div className='flex flex-col place-items-center'>
-            <h className="text-[28px] font-bold">Заказать звонок</h>
+            <a className="text-[28px] font-bold">Заказать звонок</a>
             <a className='pt-[20px] text-center text-slate-400 w-[300px]'>
               Оставить нам свой номер и наш менеджер свяжеться с вами в течении 15 минут.
-              </a>
+            </a>
           </div>
           <div className='pt-[40px]'>
             <label>
@@ -204,9 +204,11 @@ function Modal({isOpened, changeModalState}) {
           <div className='pt-[30px] text-justify w-[300px] flex gap-[10px] '>
             <Checkbox/>
             <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
-               принимаю условия Соглашения исогласен с обработкой моих персональных данных AutoSales способами и целей указанными 
+               принимаю условия Соглашения и согласен с обработкой моих персональных данных AutoSales способами и целями, указанными 
                в Политике</a>
           </div>
+          {/* Кнопка закрытия модального окна */}
+          <button className="absolute top-0 right-0 mt-4 mr-4" data-testid="modal-cross" onClick={changeModalState}>✕</button>
         </div>
         <div className="overlay" />
       </div>

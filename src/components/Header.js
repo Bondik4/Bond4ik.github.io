@@ -91,17 +91,17 @@ function Header(){
 {/* Скрипты */}
 {/* Модальное окно */}
 
-function Modal({isOpened, changeModalState}) {
+export function Modal({ isOpened, changeModalState }) {
   return (
     <>
       <a data-open-modal="modal" className="pl-1 text-white underline-offset-4 hover:text-[#91036d] duration-[90ms] cursor-pointer" onClick={changeModalState}>Обратный звонок</a>
-      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" onClick={changeModalState}>
-        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]">
+      <div className={"modal" + (isOpened ? ' active' : '')} id="modal" data-testid="modal-out" onClick={changeModalState}>
+        <div className="w-[450px] flex flex-col items-center justify-center px-[60px] py-[70px] relative z-10 bg-slate-50 shadow-[0_10px_15px_rgba(0,0,0, .4)] rounded-[30px]" data-testid="modal-body">
           <div className='flex flex-col place-items-center'>
-            <h className="text-[28px] font-bold">Заказать звонок</h>
+            <a className="text-[28px] font-bold">Заказать звонок</a>
             <a className='pt-[20px] text-center text-slate-400 w-[300px]'>
               Оставить нам свой номер и наш менеджер свяжеться с вами в течении 15 минут.
-              </a>
+            </a>
           </div>
           <div className='pt-[40px]'>
             <label>
@@ -116,15 +116,18 @@ function Modal({isOpened, changeModalState}) {
           <div className='pt-[30px] text-justify w-[300px] flex gap-[10px] '>
             <Checkbox/>
             <a className='text-[10px] '>Я ознакомился с Политикой обработки персональных данных клиентов и Пользовательским соглашением сервиса AutoSales,
-               принимаю условия Соглашения и согласен с обработкой моих персональных данных AutoSales способами и целей указанными 
+               принимаю условия Соглашения и согласен с обработкой моих персональных данных AutoSales способами и целями, указанными 
                в Политике</a>
           </div>
+          {/* Кнопка закрытия модального окна */}
+          <button className="absolute top-0 right-0 mt-4 mr-4" data-testid="modal-cross" onClick={changeModalState}>✕</button>
         </div>
         <div className="overlay" />
       </div>
     </>
   );
 }
+
 {/* Кнопка галочки в модальном окне */}
 
 function Checkbox() {
