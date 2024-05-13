@@ -1,35 +1,54 @@
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import burgerIcon from '../media/images/burger-menu.svg'
 
 function Header(){
-  const [isOpened, setIsOpened] = useState(false);  
-    function openModal() {
-      document.body.style.overflow = "hidden";
-      setIsOpened(true);
-      }
-      
-      function closeModal(e) {
-      if (e.target.classList.contains('modal')) {
-      setIsOpened(false);
-      document.body.style.overflow = "scroll";
-      }
-      }
-      
-      const changeModalState = (e) => {
-      if (isOpened) {closeModal(e);} 
-      else {openModal();}
-      }
-      const [burgerIsOpen, setBurgerIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false);
 
-      function burgerClick() {
-        setBurgerIsOpen(true);
-      }
-      function closeBurgerClick(e) {
-        if (e.target.id === "burger-modal") {
-          setBurgerIsOpen(false);
-        }
-      }
+  // Обработчик прокрутки
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Управление overflow для body
+  useEffect(() => {
+    document.body.style.overflow = burgerIsOpen ? "hidden" : "scroll";
+  }, [burgerIsOpen]);
+
+  // Функции для открытия и закрытия модального окна
+  function openModal() {
+    setIsOpened(true);
+  }
+
+  function closeModal(e) {
+    if (e.target.classList.contains('modal')) {
+      setIsOpened(false);
+    }
+  }
+
+  // Переключение состояния модального окна
+  const changeModalState = (e) => {
+    isOpened ? closeModal(e) : openModal();
+  }
+
+  // Функции для работы с бургер-меню
+  function burgerClick() {
+    setBurgerIsOpen(true);
+  }
+
+  function closeBurgerClick(e) {
+    if (e.target.id === "burger-modal") {
+      setBurgerIsOpen(false);
+    }
+  }
+
   return(
     <header className="headlobby bg-black">
         <div className="w-full container justify-around mx-auto" >
