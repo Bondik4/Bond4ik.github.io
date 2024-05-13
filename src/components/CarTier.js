@@ -23,19 +23,19 @@ const cars = [
   },
   {
     text: "Zeeker 001",
-    image: "/media/car/Zeekr/1.webp"
+    image: "/media/car/ZEEKR/1.webp"
   },
   {
     text: "Zeeker 009",
-    image: "/media/car/Zeekr/2.webp"
+    image: "/media/car/ZEEKR/2.webp"
   },
   {
     text: "Zeeker X",
-    image: "/media/car/Zeekr/3.webp"
+    image: "/media/car/ZEEKR/3.webp"
   },
   {
     text: "Zeeker 007",
-    image: "/media/car/Zeekr/4.webp"
+    image: "/media/car/ZEEKR/4.webp"
   },
   {
     text: "Li Auto L8",
