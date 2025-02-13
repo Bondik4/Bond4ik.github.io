@@ -12,8 +12,6 @@ function Services() {
       setIsOpened(true);
       }
 
-      
-      
       function closeModal(e) {
       if (e.target.classList.contains('modal')) {
       setIsOpened(false);
@@ -34,9 +32,9 @@ function Services() {
             <Modal setisOpened={setIsOpened} isOpened={isOpened} changeModalState={changeModalState}/>
           </div>
           <div className="container mx-auto">
-            <div className="pt-[140px] sm:pt-20 pl-[7px] pr-[7px]">
-              <Link className="text-slate-400 text-[14px] sm:text-base" to="/">Главная </Link>
-              <a className="text-[14px] sm:text-base">— Услуги</a>
+            <div className="pt-[140px]  pr-[7px]">
+              <Link className="pl-[5px] text-slate-400 text-[14px]" to="/">Главная </Link>
+              <a className="text-[14px] ">— Услуги</a>
             </div>
             <div className="pt-[25px] text-center xl:text-left">
               <a className="text-[50px] font-Bold sm:text-4xl md:text-5xl ">Покупателям</a>

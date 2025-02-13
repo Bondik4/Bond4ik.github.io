@@ -28,10 +28,10 @@ function Header(){
   }
 
   function closeModal(e) {
-    if (e.target.classList.contains('modal')) {
-      setIsOpened(false);
+    if (e.currentTarget.classList.contains('modal')) {
+        setIsOpened(false);
     }
-  }
+}
 
   // Переключение состояния модального окна
   const changeModalState = (e) => {
